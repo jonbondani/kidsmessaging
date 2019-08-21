@@ -8,11 +8,13 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:kidsmessaging/main.dart';
+import 'package:kidsmessaging/pages/ConversationPageList.dart';
 
 void main() {
-  testWidgets('Checking if hello world shows up', (WidgetTester tester) async {
+  testWidgets('Main UI Test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
-    expect(find.text('Hola Mundo mundial'), findsOneWidget);
+    await tester.pumpWidget(KidsMessaging());
+
+    expect(find.byType(ConversationPageList), findsOneWidget);
   });
 }
